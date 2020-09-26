@@ -1,0 +1,112 @@
+
+FICHIER MAKEFILES
+
+// VECTEUR
+
+all:: testVecteur
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+testVecteur.o: testVecteur.cc 
+
+testVecteur: testVecteur.o Vecteur.o
+
+--------------------------------------------------
+
+// OSCILLATEUR
+
+all:: testOscillateur
+
+Oscillateur.o: Oscillateur.cc Oscillateur.h 
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+testOscillateur.o: testOscillateur.cc
+
+testOscillateur: testOscillateur.o Oscillateur.o Vecteur.o
+
+--------------------------------------------------
+
+// INTEGRATEUR
+
+all::testIntegrateur
+
+var.o: var.h
+
+Integrateur.o: Integrateur.cc Integrateur.h
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+Oscillateur.o: Oscillateur.cc Oscillateur.h 
+
+testIntegrateur.o: testIntegrateur.cc 
+
+testIntegrateur:: testIntegrateur.o Integrateur.o Oscillateur.o Vecteur.o
+
+--------------------------------------------------
+
+// PENDULE
+
+all::testPendule
+
+var.o: var.h
+
+Pendule.o: Pendule.cc Pendule.h 
+
+Integrateur.o: Integrateur.cc Integrateur.h
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+Oscillateur.o: Oscillateur.cc Oscillateur.h 
+
+testPendule.o: testPendule.cc 
+
+testPendule:: testPendule.o Pendule.o Integrateur.o Oscillateur.o Vecteur.o
+
+--------------------------------------------------
+
+// RESSORT
+
+all::testRessort
+
+var.o: var.h
+
+Ressort.o: Ressort.cc Ressort.h 
+
+Integrateur.o: Integrateur.cc Integrateur.h
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+Oscillateur.o: Oscillateur.cc Oscillateur.h 
+
+testRessort.o: testRessort.cc 
+
+testRessort:: testRessort.o Ressort.o Integrateur.o Oscillateur.o Vecteur.o
+
+--------------------------------------------------
+
+// EXERCICE P9
+
+all:exerciceP9
+
+var.o: var.h
+
+Vecteur.o: Vecteur.cc Vecteur.h
+
+Oscillateur.o: Oscillateur.cc Oscillateur.h
+
+Integrateur.o: Integrateur.cc Integrateur.h
+
+Ressort.o: Ressort.cc Ressort.h 
+
+Pendule.o: Pendule.cc Pendule.h
+
+Systeme.o: Systeme.cc Systeme.h
+
+TextViewer.o: TextViewer.cc TextViewer.h
+
+exerciceP9.o: exerciceP9.cc 
+
+exerciceP9: exerciceP9.o TextViewer.o Systeme.o Pendule.o Ressort.o Integrateur.o Oscillateur.o Vecteur.o 
+
+--------------------------------------------------
